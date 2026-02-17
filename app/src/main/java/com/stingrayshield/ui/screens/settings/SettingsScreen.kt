@@ -317,7 +317,7 @@ fun SettingsScreen(
 
             // Clickable link to get an API key
             OutlinedButton(
-                onClick = { uriHandler.openUri("https://opencellid.org/register") },
+                onClick = { uriHandler.openUri("https://my.opencellid.org/register") },
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Icon(
@@ -325,7 +325,7 @@ fun SettingsScreen(
                     contentDescription = null,
                     modifier = Modifier.padding(end = 8.dp)
                 )
-                Text("Get a FREE API Token at opencellid.org")
+                Text("Get a FREE API Token at my.opencellid.org")
             }
 
             Spacer(modifier = Modifier.height(12.dp))
@@ -384,11 +384,11 @@ fun SettingsScreen(
                             )
                             Spacer(modifier = Modifier.height(12.dp))
                             Text(
-                                text = "Register at opencellid.org/register",
+                                text = "Register at my.opencellid.org/register",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.primary,
                                 modifier = Modifier.clickable {
-                                    uriHandler.openUri("https://opencellid.org/register")
+                                    uriHandler.openUri("https://my.opencellid.org/register")
                                 }
                             )
                         }
