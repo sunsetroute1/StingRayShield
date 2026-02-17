@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="sharedpref" path="device_info.xml"/>
+        <exclude domain="sharedpref" path="detection_events.xml"/>
+        <exclude domain="database" path="stingray_events.db"/>
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="sharedpref" path="device_info.xml"/>
+    </device-transfer>
+</data-extraction-rules>

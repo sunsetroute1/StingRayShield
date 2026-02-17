@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<resources> 
+    <string name="app_name">StingrayShield</string> 
+    <string name="app_version">Android 15/16 Compatible</string> 
+    <string name="app_description">Advanced 4G/5G IMSI-Catcher Detection</string> 
+    <string name="features">• 4G/5G Stingray Detection\n• Cell Tower Monitoring\n• Location Based Analysis\n• Enhanced Privacy Protection</string> 
+</resources> 

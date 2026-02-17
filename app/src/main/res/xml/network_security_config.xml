@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Network Security Configuration for StingrayShield
+    Configures secure network communication with proper certificate handling
+-->
+<network-security-config>
+    <!-- Base configuration for all connections -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <!-- Trust system CA certificates -->
+            <certificates src="system" />
+            <!-- Trust user-installed CA certificates (for debugging/testing) -->
+            <certificates src="user" overridePins="true" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- Domain-specific configuration for Firebase -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">googleapis.com</domain>
+        <domain includeSubdomains="true">google.com</domain>
+        <domain includeSubdomains="true">gstatic.com</domain>
+        <domain includeSubdomains="true">firebaseio.com</domain>
+        <domain includeSubdomains="true">firebase.google.com</domain>
+        <domain includeSubdomains="true">firebaseapp.com</domain>
+        <domain includeSubdomains="true">crashlytics.com</domain>
+        <domain includeSubdomains="true">app-measurement.com</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+    
+    <!-- OpenStreetMap tiles -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">tile.openstreetmap.org</domain>
+        <domain includeSubdomains="true">openstreetmap.org</domain>
+    </domain-config>
+    
+    <!-- Cell tower location APIs -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">opencellid.org</domain>
+        <domain includeSubdomains="true">unwiredlabs.com</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+
+    <!-- Debug configuration (only for debug builds) -->
+    <debug-overrides>
+        <trust-anchors>
+            <!-- Allow user certificates in debug mode -->
+            <certificates src="user" />
+            <certificates src="system" />
+        </trust-anchors>
+    </debug-overrides>
+</network-security-config>
+
+
+
+
+
+
+

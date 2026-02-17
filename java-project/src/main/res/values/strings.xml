@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<resources> 
+    <string name="app_name">StingrayShield</string> 
+    <string name="app_version">Version 1.0</string> 
+    <string name="app_compatibility">Compatible with Android 15/16</string> 
+    <string name="app_description">Advanced 4G/5G IMSI-catcher detection</string> 
+</resources> 

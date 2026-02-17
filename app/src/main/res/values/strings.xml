@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StingrayShield</string>
+    
+    <!-- Navigation titles -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_scanner">Scanner</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_settings">Settings</string>
+    
+    <!-- Detection status -->
+    <string name="status_normal">Normal: No suspicious activity detected</string>
+    <string name="status_warning">Warning: Potential unusual network activity</string>
+    <string name="status_alert">Alert: High probability of stingray detected</string>
+    <string name="status_danger">Danger: Stingray likely in use</string>
+    <string name="status_unknown">Unknown: Insufficient data to determine status</string>
+    
+    <!-- Settings categories -->
+    <string name="settings_detection">Detection Settings</string>
+    <string name="settings_notification">Notification Settings</string>
+    <string name="settings_data">Data Management</string>
+    <string name="settings_privacy">Privacy Settings</string>
+    <string name="settings_about">About &amp; Help</string>
+    
+    <!-- Detection features -->
+    <string name="feature_tower_consistency">Cell Tower Information Consistency</string>
+    <string name="feature_signal_strength">Abnormal Signal Strength</string>
+    <string name="feature_neighboring_cells">Neighboring Cell Information</string>
+    <string name="feature_silent_sms">Silent SMS Detection</string>
+    <string name="feature_femtocell_detection">FemtoCell Detection</string>
+    <string name="feature_location_tracking">Location Anomaly Detection</string>
+    <string name="feature_encryption">Encryption Downgrade Detection</string>
+    
+    <!-- Permissions -->
+    <string name="permission_location_rationale">StingrayShield requires location permission to detect cell towers and analyze your cellular network environment.</string>
+    <string name="permission_phone_state_rationale">Phone state permission is needed to detect cellular network anomalies and potential stingray devices.</string>
+    <string name="permission_storage_rationale">Storage permission is needed to save logs and cellular network data for analysis.</string>
+    <string name="permission_notification_rationale">Notification permission is needed to alert you when suspicious activity is detected.</string>
+    
+    <!-- Messages -->
+    <string name="service_running">StingrayShield is actively monitoring for stingray devices</string>
+    <string name="service_stopped">Monitoring service stopped</string>
+    <string name="scan_started">Scanning for stingray devices…</string>
+    <string name="scan_completed">Scan completed</string>
+    <string name="data_export_success">Data successfully exported</string>
+    <string name="data_export_failed">Failed to export data</string>
+    
+    <!-- Actions -->
+    <string name="action_start_scan">Start Scan</string>
+    <string name="action_stop_scan">Stop Scan</string>
+    <string name="action_export_data">Export Data</string>
+    <string name="action_clear_data">Clear Data</string>
+    <string name="action_view_details">View Details</string>
+    <string name="action_dismiss">Dismiss</string>
+    <string name="action_enable">Enable</string>
+    <string name="action_disable">Disable</string>
+    <string name="action_learn_more">Learn More</string>
+</resources>

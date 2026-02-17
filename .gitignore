@@ -1,0 +1,35 @@
+# Build outputs
+/build/
+/app/build/
+*.apk
+*.ap_
+*.aab
+apk-output/
+
+# Gradle
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Local config (paths, keys)
+local.properties
+*.keystore
+keystore/*.keystore
+!keystore/generate_keystore.bat
+
+# IDE
+.idea/shelf/
+.idea/workspace.xml
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp / cache
+*.log
+*.tmp
+temp-java-project/
+
+# Large Gradle dist (use wrapper instead)
+gradle-8.2-bin.zip
+gradle-8.2/
