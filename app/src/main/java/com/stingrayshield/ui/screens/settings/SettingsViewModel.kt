@@ -76,7 +76,7 @@ class SettingsViewModel @Inject constructor(
             dataRetentionPeriod = preferences.getInt(KEY_DATA_RETENTION, 30), // in days
             
             // API settings
-            openCellIdApiKey = preferences.getString(OpenCellIdPreferences.KEY_OPENCELLID_API_KEY, "pk.aa2c85717f621fa256a0a07c6ac19f9d") ?: "",
+            openCellIdApiKey = preferences.getString(OpenCellIdPreferences.KEY_OPENCELLID_API_KEY, "") ?: "",
             csvRefreshIntervalDays = preferences.getInt(OpenCellIdPreferences.KEY_CSV_REFRESH_INTERVAL_DAYS, 30)
         )
     }

@@ -1,4 +1,5 @@
 import com.android.build.api.dsl.ApplicationExtension
+import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -30,6 +31,17 @@ configure<ApplicationExtension> {
         }
     }
 
+    signingConfigs {
+        val releaseKeystore = rootProject.file("keystore/release.keystore")
+        create("release") {
+            if (releaseKeystore.exists()) {
+                storeFile = releaseKeystore
+                storePassword = System.getenv("STINGRAY_KEYSTORE_PASSWORD") ?: project.findProperty("releaseStorePassword")?.toString() ?: ""
+                keyAlias = System.getenv("STINGRAY_KEY_ALIAS") ?: project.findProperty("releaseKeyAlias")?.toString() ?: "stingrayshield"
+                keyPassword = System.getenv("STINGRAY_KEY_PASSWORD") ?: project.findProperty("releaseKeyPassword")?.toString() ?: ""
+            }
+        }
+    }
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -38,6 +50,11 @@ configure<ApplicationExtension> {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release").takeIf { it.storeFile?.exists() == true }
+                ?: signingConfigs.getByName("debug")
+            configure<CrashlyticsExtension> {
+                mappingFileUploadEnabled = false
+            }
         }
         debug {
             isMinifyEnabled = false
@@ -140,3 +157,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
+
+// Skip Crashlytics mapping upload so release build succeeds without Firebase upload (e.g. groovy/XmlSlurper)
+tasks.matching { it.name == "uploadCrashlyticsMappingFileRelease" }.configureEach { enabled = false }

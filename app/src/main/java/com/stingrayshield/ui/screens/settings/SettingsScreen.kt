@@ -335,7 +335,7 @@ fun SettingsScreen(
                 fontWeight = FontWeight.Medium
             )
             Text(
-                text = "Re-download US tower CSV files every N days (first run downloads once; 2/day limit).",
+                text = "Re-download US tower CSV files every ${uiState.csvRefreshIntervalDays} days (first run downloads once; 2/day limit).",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
@@ -344,10 +344,10 @@ fun SettingsScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Slider(
-                    value = uiState.csvRefreshIntervalDays.toFloat(),
-                    onValueChange = { viewModel.updateSetting(SettingsViewModel.KEY_CSV_REFRESH_INTERVAL_DAYS, it.toInt().coerceIn(1, 365)) },
+                    value = uiState.csvRefreshIntervalDays.coerceIn(7, 90).toFloat(),
+                    onValueChange = { viewModel.updateSetting(SettingsViewModel.KEY_CSV_REFRESH_INTERVAL_DAYS, it.toInt().coerceIn(7, 90)) },
                     valueRange = 7f..90f,
-                    steps = 11
+                    steps = 82  // 83 positions: 7, 8, 9, … 90 (one day per step)
                 )
                 Text(
                     text = "${uiState.csvRefreshIntervalDays} days",
